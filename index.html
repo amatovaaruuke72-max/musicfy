@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MUSICFY — музыка для настроения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside>
+  <div class="brand">♫ MUSICFY</div>
+  <nav class="nav">
+    <button class="active" data-view="home">⌂ <span>Главная</span></button>
+    <button data-view="all">▤ <span>Все треки</span></button>
+    <button data-view="favorites">♥ <span>Избранное</span></button>
+    <button data-view="albums">▣ <span>Альбомы</span></button>
+    <button data-view="artists">♬ <span>Исполнители</span></button>
+  </nav>
+  <div class="side-title">Плейлисты <button class="plus" id="newPlaylist">+</button></div>
+  <button class="playlist-link" data-playlist="Любимые треки">♥ Любимые треки</button>
+  <button class="playlist-link" data-playlist="Для учёбы">▣ Для учёбы</button>
+  <button class="playlist-link" data-playlist="Вечер">☾ Вечер</button>
+  <button class="playlist-link" data-playlist="Рок">♫ Рок</button>
+</aside>
+<main>
+  <div class="intro"><h1>Музыка для твоего настроения</h1><p>Слушай любимые треки</p></div>
+  <div class="tools">
+    <input id="search" placeholder="⌕  Поиск треков, исполнителей, альбомов">
+    <select id="artistFilter"><option value="">Все исполнители</option></select>
+    <select id="genreFilter"><option value="">Все жанры</option><option>Инди</option><option>Лоу-фай</option><option>Поп</option><option>Рок</option><option>Электроника</option></select>
+  </div>
+  <section id="albumsSection">
+    <h2>Популярные альбомы</h2>
+    <div class="album-grid" id="albumGrid"></div>
+  </section>
+  <section class="youtube-section">
+    <h2>Сейчас играет на YouTube</h2>
+    <div class="youtube-frame-wrap">
+      <div id="youtubePlayer"></div>
+      <p class="youtube-help" id="youtubeStatus">Выбери песню ниже, чтобы начать воспроизведение. Для работы нужен интернет.</p>
+    </div>
+  </section>
+  <section>
+    <h2 id="trackHeading">Все треки</h2>
+    <div class="track-list" id="trackList"></div>
+    <div class="notice">Обложки взяты из твоего эскиза. Для воспроизведения нужен интернет; отдельные видео YouTube могут быть недоступны для встраивания.</div>
+  </section>
+</main>
+</div>
+<div class="player">
+  <div class="now"><div class="now-art" id="nowArt">♫</div><div class="now-text"><div class="now-title" id="nowTitle">Выбери трек</div><div class="now-artist" id="nowArtist">MUSICFY</div></div></div>
+  <div class="controls">
+    <button class="control" id="shuffle" title="Случайный порядок">⤨</button>
+    <button class="control" id="prev" title="Предыдущий">◀|</button>
+    <button class="main-play" id="playPause" title="Играть">▶</button>
+    <button class="control" id="next" title="Следующий">|▶</button>
+    <button class="control" id="favCurrent" title="В избранное">♡</button>
+  </div>
+  <div class="progress-area"><span id="currentTime">0:00</span><input class="progress" id="progress" type="range" min="0" max="1000" value="0"><span id="totalTime">0:00</span></div>
+</div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+</html>
